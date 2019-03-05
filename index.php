@@ -11,7 +11,8 @@ $routes = array(
     array('url' => '#^page/(?P<page_id>\d+)#i', 'view' => 'page'),
 	array('url' => '#^login#i', 'view' => 'login'),
 	array('url' => '#^logout#i', 'view' => 'logout'),
-    array('url' => '#^forgot#i', 'view' => 'forgot')
+    array('url' => '#^forgot#i', 'view' => 'forgot'),
+    array('url' => '#^reg#i', 'view' => 'reg')
 );                 
 
 // $url = str_replace('/catalog/', '', $_SERVER['REQUEST_URI']);
