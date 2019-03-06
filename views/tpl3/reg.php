@@ -73,17 +73,18 @@
         		
                 <h3>Регистрация</h3>
                 <form action="<?=PATH?>reg" method="POST" >
-                <p><input type="text" name="name_reg" placeholder="Имя" size=40></p>
-                <p><input type="password" name="email_reg"  placeholder="Email" size=40></p>
-                <p><input type="text" name="login_reg"  placeholder="Логин" size=40></p>
+                <p><input type="text" name="name_reg" value="<?php if (isset($_SESSION['reg']['name'])) echo $_SESSION['reg']['name']?>" placeholder="Имя" size=40></p>
+                <p><input type="text" name="email_reg" value="<?php if (isset($_SESSION['reg']['email'])) echo $_SESSION['reg']['email']?>" placeholder="Email" size=40></p>
+                <p><input type="text" name="login_reg" value="<?php if (isset($_SESSION['reg']['login'])) echo $_SESSION['reg']['login']?>" placeholder="Логин" size=40></p>
                 <p><input type="password" name="password_reg"  placeholder="Пароль" size=40></p>
                 <p><input type="submit" name="reg"  value="Зарегистрироваться"></p>
                 </form>
-			
+			<div class="errors_form">
             <?php if (isset($_SESSION['reg']['errors'])):?>
             <?=$_SESSION['reg']['errors'];
             unset ($_SESSION['reg']);?>
             <?php endif; ?>
+			</div> 
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->

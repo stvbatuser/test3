@@ -12,7 +12,6 @@
     
 }
 
-
-#forgot{
-    display: none;
+.errors_form  {
+	color: red;
 }
