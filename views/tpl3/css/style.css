@@ -5,13 +5,20 @@
 
 .menu_top li{
     display: inline;
-	margin: 0 200px 0 0;
-}
-.menu li a:hover{
-	text-decoration: none;
+	padding: 0 50px 0 100px;
+    font-size: 14px;
+    color:#cc0000
     
+}
+.menu_top li a:hover{
+	text-decoration: none;
+    color: #0000ff;
 }
 
 .errors_form  {
 	color: red;
+}
+
+.ok_form{
+    color: green;
 }

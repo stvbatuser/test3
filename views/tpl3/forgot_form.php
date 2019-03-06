@@ -17,6 +17,6 @@
 <?php endif;?>
 
 <?php if ($_SESSION['auth']['errors_mail']):?>
-<p style="color: red"><?=$_SESSION['auth']['errors_mail'] ;?></p>
+<div class="errors_form"><?=$_SESSION['auth']['errors_mail'] ;?></div>
 <?php unset ($_SESSION['auth']); ?>
 <?php endif;?>

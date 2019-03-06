@@ -11,12 +11,12 @@
 </form>
 
 <?php if ($_SESSION['auth']['errors']):?>
-<p style="color: red"><?=$_SESSION['auth']['errors'] ;?></p>
+<div class="errors_form"><p><?=$_SESSION['auth']['errors'] ;?></p></div>
 <?php unset ($_SESSION['auth']); ?>
 <?php endif;?>
 
 <?php if ($_SESSION['auth']['ok']):?>
-<p style="color: green"><?=$_SESSION['auth']['ok'] ;?></p>
+<div class="ok_form"><p><?=$_SESSION['auth']['ok'] ;?></p></div>
 <?php unset ($_SESSION['auth']); ?>
 <?php endif;?>
 

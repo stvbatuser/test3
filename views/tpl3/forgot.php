@@ -74,12 +74,12 @@
                 <h3>Восстановление пароля</h3>
                 
                 <?php if ($_SESSION ['forgot']['change_pass']):?>
-                <p style="color: green"><?=$_SESSION ['forgot']['change_pass'] ;?></p>
+                <div class="ok_form"><p><?=$_SESSION ['forgot']['change_pass'] ;?></p></div> 
                 <?php unset ($_SESSION ['forgot']['change_pass']) ?>
                       
                                 
                 <?php elseif ($_SESSION ['forgot']['errors']):?>
-                <p style="color: red"><?=$_SESSION ['forgot']['errors'] ;?></p>
+                <div class="errors_form"><p><?=$_SESSION ['forgot']['errors'] ;?></p></div> 
                 <?php unset ($_SESSION ['forgot']['errors']) ?>
                 
                 

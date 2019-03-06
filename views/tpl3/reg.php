@@ -72,6 +72,10 @@
         <div id="content" class="float_r">
         		
                 <h3>Регистрация</h3>
+                <?php if(isset($_SESSION['auth']['user'])) :?>
+                <div class="ok_form"> <?=$_SESSION['reg']['ok']?> </div>
+                                
+                <?php else:?>
                 <form action="<?=PATH?>reg" method="POST" >
                 <p><input type="text" name="name_reg" value="<?php if (isset($_SESSION['reg']['name'])) echo $_SESSION['reg']['name']?>" placeholder="Имя" size=40></p>
                 <p><input type="text" name="email_reg" value="<?php if (isset($_SESSION['reg']['email'])) echo $_SESSION['reg']['email']?>" placeholder="Email" size=40></p>
@@ -79,10 +83,17 @@
                 <p><input type="password" name="password_reg"  placeholder="Пароль" size=40></p>
                 <p><input type="submit" name="reg"  value="Зарегистрироваться"></p>
                 </form>
+                <?php endif; ?>
+                
 			<div class="errors_form">
             <?php if (isset($_SESSION['reg']['errors'])):?>
             <?=$_SESSION['reg']['errors'];
             unset ($_SESSION['reg']);?>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['reg']['errors1'])|| isset($_SESSION['reg']['errors2'])):?>
+           <p> <?=$_SESSION['reg']['errors1']?> </p>
+           <p> <?=$_SESSION['reg']['errors2']?> </p>
+            <?php unset($_SESSION['reg']);?>
             <?php endif; ?>
 			</div> 
         </div> 
