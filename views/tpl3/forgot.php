@@ -11,9 +11,6 @@
 
 <link rel="stylesheet" type="text/css" href="<?=PATH?>views/tpl3/ddsmoothmenu.css" />
 
-<script type="text/javascript" src="<?=PATH?>views/tpl3/js/jquery.min.js"></script>
-<script type="text/javascript" src="<?=PATH?>views/tpl3/js/ddsmoothmenu.js"></script>
-
 
 </head>
 
@@ -36,19 +33,15 @@
     
     <div id="templatemo_menubar">
     <div id="top_nav" class="ddsmoothmenu">
-    
-            <?php include "views\menu_template.php"?> 
+             
+            <?php include "views\menu_template.php";?>
+
+            <?php include "form_search.php";?>
             
             <br style="clear: left" />
-    </div> <!-- end of ddsmoothmenu -->
-    	
+    </div> <!-- end of ddsmoothmenu -->   
         
-        <div id="templatemo_search">
-            <form action="#" method="get">
-              <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
-              <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
-            </form>
-        </div>
+        
     </div> <!-- END of templatemo_menubar -->
     
     <div id="templatemo_main">

@@ -32,23 +32,29 @@
     </div> <!-- END of templatemo_header -->
     
     <div id="templatemo_menubar">
-    
-    	<?php include "views\menu_template.php"?> 
+    <div id="top_nav" class="ddsmoothmenu">
+             
+            <?php include "views\menu_template.php";?>
+
+            <?php include "form_search.php";?>
+            
+            <br style="clear: left" />
+    </div> <!-- end of ddsmoothmenu -->   
         
-        <?php include "form_search.php";?>
         
     </div> <!-- END of templatemo_menubar -->
     
     <div id="templatemo_main">
     	<div id="sidebar" class="float_l">
         	<div class="sidebar_box"><span class="bottom"></span>
-            	
+            
+            <div class="content"> 
+            <?php include "views/tpl3/form_login.php";?> 
+            </div>
+            
+            	<h3>Каталог товаров</h3>   
                 <div class="content"> 
-                <?php include "views/tpl3/form_login.php";?> 
-                </div>
-                
-                <h3>Каталог товаров</h3>   
-                <div class="content"> 
+                        
                 	<ul class="sidebar_list">
                     	<?=$categories_menu?>
                     </ul>
@@ -60,17 +66,35 @@
         </div>
         <div id="content" class="float_r">
         				
-        	  			    
-	            <?php if ($get_one_product) :?>
-                  <h4><?php echo $get_one_product['title'];?></h4>
-                <p><img src="<?php echo PATH.'views/tpl3/images/product/'.$get_one_product['image'];?>" alt=""  /></p></br>
-                <p><?php echo $get_one_product['description'];?></p>
-                <?php else:?>
-                    <h3> Такого товара нет </h3>
+        	<h1>Товары</h1>
+			
+            <?php if ($count_pages > 1):?>            
+			<p><?php echo $pagination;?></p>
+            <?endif;?>
+            
+            <?php if (is_array($result_search)):?>            
+			<?php foreach ($result_search as $product) :?>
+			    <div class="product_box">
+	            <h3><a href="<?=PATH?>product/<?=$product['id']?>" ><?php echo $product['title'];?></a></h3>
+            	<a href="<?=PATH?>product/<?=$product['id']?>"><img src="<?php echo PATH.'views/tpl3/images/product/'.$product['image'];?>" alt="" /></a>
                 
-                <?endif;?>
-                	
-			  			
+                <p class="product_price"><?php echo $product['price'];?></p>
+                
+                <a href="<?=PATH?>product/<?=$product['id']?>" >Подробнее...</a>
+            </div>        	
+			<?php endforeach; ?>	
+            <?php else:?>   
+            <strong><?php echo $result_search?></strong>
+            <?endif;?>
+            
+			
+            
+            			
+            <div class="cleaner"></div>
+                 	
+			<?php if ($count_pages > 1):?>            
+			<p><?php echo $pagination;?></p>
+            <?endif;?>
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->
@@ -79,7 +103,8 @@
     	<p><a href="#">Home</a> | <a href="#">Products</a> | <a href="#">About</a> | <a href="#">FAQs</a> | <a href="#">Checkout</a> | <a href="#">Contact Us</a>
 		</p>
 
-    	Copyright © 2072 <a href="#">Your Company Name</a> <!-- Credit: www.templatemo.com --></div> <!-- END of templatemo_footer -->
+    	Copyright © 2072 <a href="#">Your Company Name</a> </div> 
+        <!-- END of templatemo_footer -->
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->

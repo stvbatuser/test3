@@ -12,7 +12,8 @@ $routes = array(
 	array('url' => '#^login#i', 'view' => 'login'),
 	array('url' => '#^logout#i', 'view' => 'logout'),
     array('url' => '#^forgot#i', 'view' => 'forgot'),
-    array('url' => '#^reg#i', 'view' => 'reg')
+    array('url' => '#^reg#i', 'view' => 'reg'),
+    array('url' => '#^search#i', 'view' => 'search')
 );                 
 
 // $url = str_replace('/catalog/', '', $_SERVER['REQUEST_URI']);

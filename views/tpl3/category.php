@@ -11,14 +11,6 @@
 
 <link rel="stylesheet" type="text/css" href="<?=PATH?>views/tpl3/ddsmoothmenu.css" />
 
-<script type="text/javascript" src="<?=PATH?>views/tpl3/js/jquery.min.js"></script>
-<script type="text/javascript" src="<?=PATH?>views/tpl3/js/workscripts.js"></script>
-
-
-<script type="text/javascript">
-
-
-</script>
 
 </head>
 
@@ -42,17 +34,14 @@
     <div id="templatemo_menubar">
     <div id="top_nav" class="ddsmoothmenu">
              
-            <?php include "views\menu_template.php";?> 
+            <?php include "views\menu_template.php";?>
+
+            <?php include "form_search.php";?>
             
             <br style="clear: left" />
     </div> <!-- end of ddsmoothmenu -->   
         
-        <div id="templatemo_search">
-            <form action="#" method="get">
-              <input type="text" value=" " name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
-              <input type="submit" name="Search" value=" " alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
-            </form>
-        </div>
+        
     </div> <!-- END of templatemo_menubar -->
     
     <div id="templatemo_main">
@@ -78,11 +67,11 @@
         <div id="content" class="float_r">
         				
         	<h1>Товары</h1>
-			
-            <?php if ($count_goods > $perpage):?>            
+			<div class="pagination">
+            <?php if ($count_pages > 1):?>            
 			<p><?php echo $pagination;?></p>
             <?endif;?>
-            
+             </div>
             
 			<?php foreach ($products as $product) :?>
 			    <div class="product_box">
@@ -98,9 +87,11 @@
             			
             <div class="cleaner"></div>
                  	
-			<?php if ($count_goods > $perpage):?>            
-			<p><?php echo $pagination;?></p>
-            <?endif;?>
+                <div class="pagination">
+                <?php if ($count_pages > 1):?>            
+                <p><?php echo $pagination;?></p>
+                <?endif;?>
+                 </div>
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->
@@ -109,7 +100,8 @@
     	<p><a href="#">Home</a> | <a href="#">Products</a> | <a href="#">About</a> | <a href="#">FAQs</a> | <a href="#">Checkout</a> | <a href="#">Contact Us</a>
 		</p>
 
-    	Copyright © 2072 <a href="#">Your Company Name</a> <!-- Credit: www.templatemo.com --></div> <!-- END of templatemo_footer -->
+    	Copyright © 2072 <a href="#">Your Company Name</a> </div> 
+        <!-- END of templatemo_footer -->
     
 </div> <!-- END of templatemo_wrapper -->
 </div> <!-- END of templatemo_body_wrapper -->
