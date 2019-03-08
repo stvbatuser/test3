@@ -68,9 +68,11 @@
         				
         	<h1>Товары</h1>
 			
+            <div class="pagination">
             <?php if ($count_pages > 1):?>            
 			<p><?php echo $pagination;?></p>
             <?endif;?>
+            </div>
             
             <?php if (is_array($result_search)):?>            
 			<?php foreach ($result_search as $product) :?>
@@ -92,9 +94,11 @@
             			
             <div class="cleaner"></div>
                  	
-			<?php if ($count_pages > 1):?>            
+			<div class="pagination">
+            <?php if ($count_pages > 1):?>            
 			<p><?php echo $pagination;?></p>
             <?endif;?>
+            </div>
         </div> 
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->

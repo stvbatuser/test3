@@ -5,6 +5,7 @@ require "main_controller.php";
 require "models/{$view}_model.php";
 
 if (isset($_POST['reg'])){
+    
     registration();
     redirect();
 }

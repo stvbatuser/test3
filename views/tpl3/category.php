@@ -67,11 +67,12 @@
         <div id="content" class="float_r">
         				
         	<h1>Товары</h1>
+            
 			<div class="pagination">
             <?php if ($count_pages > 1):?>            
 			<p><?php echo $pagination;?></p>
             <?endif;?>
-             </div>
+            </div>
             
 			<?php foreach ($products as $product) :?>
 			    <div class="product_box">
