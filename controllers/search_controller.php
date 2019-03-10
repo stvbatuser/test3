@@ -4,7 +4,7 @@ defined("CATALOG") or die("Access denied");
 require "main_controller.php";
 require "models/{$view}_model.php";
 
-if (isset($_GET['keyword']) && !empty($_GET['keyword'])){
+if (isset($_GET['keyword']) && !empty($_GET['keyword']) && strlen($_GET['keyword'])>3){
     
     /*=========Пагинация==========*/
 
@@ -39,7 +39,7 @@ $pagination = pagination($page, $count_pages);
 
 $result_search = search($start_pos, $perpage);
 }else{
-    $result_search = 'Введите поисковый запрос';
+    $result_search = 'Введите поисковый запрос. Он должен быть больше 3 символов';
 }
 
 require "views/tpl3/{$view}.php";

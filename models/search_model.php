@@ -20,7 +20,8 @@ function count_search(){
 function search($start_pos, $perpage){
 	global $connection;
     $search = trim (mysqli_real_escape_string($connection, $_GET['keyword']));
-    $query = "SELECT id, title, image FROM products WHERE title LIKE '%{$search}%' LIMIT $start_pos, $perpage ";
+    $query = "SELECT id, title, image FROM products 
+              WHERE title LIKE '%{$search}%' || description LIKE '%{$search}%' LIMIT $start_pos, $perpage ";
     
     $res = mysqli_query($connection, $query);
     if(!mysqli_num_rows($res)){

@@ -14,7 +14,7 @@ function authorization(){
 	}else{
 		$password=md5($password);
 		$query = "SELECT name, is_admin FROM users 
-					WHERE login = '$login' AND password = '$password' 
+					WHERE login = '$login' AND password = '$password' AND is_admin = 1
 					LIMIT 1";
 					
 	$res = mysqli_query($connection, $query);

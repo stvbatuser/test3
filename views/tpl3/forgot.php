@@ -5,11 +5,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Каталог комп’ютерной техники</title>
 
-<link href="<?=PATH?>views/tpl3/templatemo_style.css" rel="stylesheet" type="text/css" />
+<link href="<?=PATH. VIEW?>templatemo_style.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="<?=PATH?>views/tpl3/css/style.css" type="text/css"  />
+<link rel="stylesheet" href="<?=PATH . VIEW ?>css/style.css" type="text/css"  />
 
-<link rel="stylesheet" type="text/css" href="<?=PATH?>views/tpl3/ddsmoothmenu.css" />
+<link rel="stylesheet" type="text/css" href="<?=PATH . VIEW?>ddsmoothmenu.css" />
 
 
 </head>
@@ -49,7 +49,7 @@
         	<div class="sidebar_box"><span class="bottom"></span>
             	
                 <div class="content"> 
-                <?php include "views/tpl3/form_login.php";?> 
+                <?php include VIEW ."/form_login.php";?> 
                 </div>
                 
                 <div class="content"> 

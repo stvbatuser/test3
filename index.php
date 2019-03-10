@@ -27,13 +27,14 @@ foreach ($routes as $route) {
 }
 
 if( empty($match) ){
+    header("HTTP/1.1 404 Not Found");
 	include 'views/404.php';
 	exit;
 }
 
 extract($match);
 // $id - ID категории
-// $product_alias - alias продукта
+// $product_id - id продукта
 // $view - вид для подключения
 
 include "controllers/{$view}_controller.php";
