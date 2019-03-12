@@ -7,8 +7,11 @@ session_start();
 $routes = [
 	['url' => '#^admin/$|^\?#', 'view' => 'options'],
 	['url' => '#^admin/login#i', 'view' => 'login'],
-    ['url' => '#^admin/options#i', 'view' => 'options'],
-	
+	['url' => '#^admin/options#i', 'view' => 'options'],
+	['url' => '#^admin/category/(?P<id>\d+)#i', 'view' => 'category'],
+	['url' => '#^admin/category#i', 'view' => 'category'],
+	['url' => '#^admin/edit_product#i', 'view' => 'edit_product']
+		
 ];                 
 
 $url = ltrim($_SERVER['REQUEST_URI'], '/');

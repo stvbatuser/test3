@@ -1,15 +1,8 @@
 <?php
 
-//include 'main_controller.php';
-//include "models/{$view}_model.php";
+require "main_controller.php";
+require "models/{$view}_model.php";
 
-require ('main_controller.php');
-require ('models/category_model.php');
-
-/*if ($_GET['category']) {
-	$id=$_GET['category'];
-}
-*/
 
 $ids = cats_id($categories, $id);
 if($ids){
@@ -21,7 +14,7 @@ else {$ids = $id ;}
 /*=========Пагинация==========*/
 
 // кол-во товаров на страницу
-$perpage = PERPAGE;
+$perpage = $options['pagination'];
 
 // общее кол-во товаров
 $count_goods = count_goods($ids);

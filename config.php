@@ -7,7 +7,7 @@ define("DB", "test3");
 define("PATH", "http://test3/");
 define("PATH_ADMIN", "http://test3/admin/");
 define("VIEW", "views/tpl3/");
-define("PERPAGE", 6);
+// define("PERPAGE", 6);
 
 
 $connection = @mysqli_connect(DBHOST, DBUSER, DBPASS, DB) or die("Нет соединения с БД");

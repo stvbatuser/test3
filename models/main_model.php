@@ -1,5 +1,17 @@
 <?php
 defined("CATALOG") or die("Access denied");
+
+	function get_options_use(){
+		global $connection;
+		$query = "SELECT * FROM options";
+		$res = mysqli_query($connection, $query);
+		while($row = mysqli_fetch_assoc($res)){
+			$options[$row['title']] = $row['value'];
+			}
+		return $options;
+				
+	}
+
 /**
 * Распечатка массива
 **/

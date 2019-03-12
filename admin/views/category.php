@@ -39,31 +39,44 @@
             
         </div>
         <div id="content" class="float_r">
-        	<h3>Настойки сайта</h3>	
+        	<h3>Редактирование товаров</h3>	
+			
+			<div class="pagination">
+            <?php if ($count_pages > 1):?>            
+			<p><?php echo $pagination;?></p>
+            <?endif;?>
+            </div>
                 
-        <form action="<?=PATH_ADMIN?>options" method="post">
         <table>
             <thead>
                 <tr>
-                    <th>Настройка</th>
-                    <th>Значения</th>
+                    <th>ID</th>
+                    <th>Название</th>
+					<th>Цена</th>
+					<th>Новая цена</th>
+                    <th>Редактировать</th>
+					<th>Удалить</th>
+                   
                 </tr>
             </thead>
             <tbody>
-            <?php foreach ($get_options as $option) :?>
+            <?php foreach ($products as $product) :?>
                 <tr>
-                    <td><?=$option['name']?></td>
-                    <td><input type="text" name="<?=$option['title']?>" value="<?=$option['value']?>" /></td>
+                    <td><?=$product['id']?></td>
+					<td><?=$product['title']?></td>
+						<form action="<?=PATH_ADMIN?>edit_product" method="post">
+						<td><input type="text" name="price" value="<?php echo $product['price'];?>" size="10" /></td>
+							<input type="hidden" name="id" value="<?php echo $product['id'];?>" /></td>
+						<td><input type="submit" name="edit_price" value="Изменить" />
+						</form>
+					<td><a href="<?=PATH_ADMIN?>edit_product"><img src="<?=PATH_ADMIN?>views\img\edit.png" alt=""></a></td>
+					<td><a href="<?=PATH_ADMIN?>delete_product"><img src="<?=PATH_ADMIN?>views\img\delete.png"></a></td>
 			    </tr>
             <?php endforeach;?>    
                 
-                <tr>
-                    <td></td>
-                    <td><input type="submit" name="go_settings" value="Изменить" /></td>
-                </tr>
-            </tbody>
+             </tbody>
         </table>
-        </form>
+        
         
                 <?php if ($_SESSION['admin']['ok']):?>
                 <div class="ok_form"><p><?=$_SESSION['admin']['ok'] ;?></p></div> 
@@ -76,6 +89,13 @@
                 
                 <?php endif;?>
         </div> 
+		
+		<div class="pagination">
+            <?php if ($count_pages > 1):?>            
+			<p><?php echo $pagination;?></p>
+            <?endif;?>
+            </div>
+			
         <div class="cleaner"></div>
     </div> <!-- END of templatemo_main -->
     

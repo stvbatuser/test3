@@ -79,7 +79,7 @@
 	            <h3><a href="<?=PATH?>product/<?=$product['id']?>" ><?php echo $product['title'];?></a></h3>
             	<a href="<?=PATH?>product/<?=$product['id']?>"><img src="<?php echo PATH . VIEW .'images/product/'.$product['image'];?>" alt="" /></a>
                 
-                <p class="product_price"><?php echo $product['price'];?></p>
+                <p class="product_price">Цена: <?php echo $product['price'];?> грн.</p>
                 
                 <a href="<?=PATH?>product/<?=$product['id']?>" >Подробнее...</a>
             </div>        	

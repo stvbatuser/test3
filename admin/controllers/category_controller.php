@@ -1,20 +1,22 @@
 <?php
-defined("CATALOG") or die("Access denied");
 
 require "main_controller.php";
 require "models/{$view}_model.php";
 
-$keyword = trim($_GET['keyword']);
+$ids = cats_id($categories, $id);
+if($ids){
+	$ids = rtrim($ids, ",");
+}
+else {$ids = $id ;}
 
-if (isset($_GET['search']) && !empty($_GET['keyword']) && strlen($_GET['keyword'])>3){
-    
-    /*=========Пагинация==========*/
+
+/*=========Пагинация==========*/
 
 // кол-во товаров на страницу
-$perpage = $options['pagination'];
+$perpage = 10;
 
 // общее кол-во товаров
-$count_goods = count_search();
+$count_goods = count_goods($ids);
 
 // необходимое кол-во страниц
 $count_pages = ceil($count_goods / $perpage);
@@ -39,11 +41,8 @@ $pagination = pagination($page, $count_pages);
 
 /*=========Пагинация==========*/
 
-$result_search = search($start_pos, $perpage);
-}else{
-    $result_search = 'Введите поисковый запрос. Он должен быть больше 3 символов';
-}
+$products = get_products ($ids, $start_pos, $perpage);
 
-require "views/tpl3/{$view}.php";
 
+require "views/{$view}.php";
 ?>

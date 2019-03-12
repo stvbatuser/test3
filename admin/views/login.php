@@ -32,14 +32,7 @@
     <div id="templatemo_main">
     	<div id="sidebar" class="float_l">
         	<div class="sidebar_box"><span class="bottom"></span>
-            	
-                <div class="content"> 
-                11111111111111
-                </div>
-                
-                <div class="content"> 
-                222222222222222
-                </div>
+            	                                                
             </div>
             
         </div>

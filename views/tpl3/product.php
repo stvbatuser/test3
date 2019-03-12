@@ -64,7 +64,8 @@
 	            <?php if ($get_one_product) :?>
                   <h4><?php echo $get_one_product['title'];?></h4>
                 <p><img src="<?php echo PATH.'views/tpl3/images/product/'.$get_one_product['image'];?>" alt=""  /></p></br>
-                <p><?php echo $get_one_product['description'];?></p>
+                <h5>Цена: <?php echo $get_one_product['price'];?> грн.</h5>
+				<p><?php echo $get_one_product['description'];?></p>
                 <?php else:?>
                     <h3> Такого товара нет </h3>
                 
